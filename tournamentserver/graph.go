@@ -1,4 +1,4 @@
-package tournament_server
+package tournamentserver
 
 type graph struct {
 	Beginner []*node

@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "6eebb890-9e9e-4001-af0b-7ca47332abde",
+		"name": "MTG Tournament",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"displayName\": \"Maudi\",\n\t\"username\": \"Daniel\",\n\t\"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "localhost:1337/login?",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "displayName",
+							"value": "Maudi",
+							"description": "Display Name",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "Daniel",
+							"description": "Username ",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"description": "Password",
+							"disabled": true
+						}
+					]
+				},
+				"description": "login "
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"displayName\": \"Maudi\",\n\t\"username\": \"Daniel\",\n\t\"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "localhost:1337/register?",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "displayName",
+							"value": "Maudi",
+							"description": "Display Name",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "Daniel",
+							"description": "Username ",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"description": "Password",
+							"disabled": true
+						}
+					]
+				},
+				"description": "register"
+			},
+			"response": []
+		}
+	]
+}

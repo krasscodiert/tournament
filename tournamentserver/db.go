@@ -10,7 +10,8 @@ import (
 
 //DB Struct
 type DB struct {
-	db *bolt.DB
+	db         *bolt.DB
+	userBucket *bolt.Bucket
 }
 
 //New - Default constructor
@@ -18,6 +19,10 @@ func (d *DB) New() *DB {
 
 	dbd, err := bolt.Open("my.db", 0600, nil)
 	d.db = dbd
+	d.db.Update(func(tx *bolt.Tx) error {
+		_, err := tx.CreateBucketIfNotExists([]byte("User"))
+		return err
+	})
 
 	if err != nil {
 		log.Fatal(err)
@@ -46,12 +51,12 @@ func (d *DB) getUser(name string) (login, bool) {
 		log.Fatal("decode error:", err)
 	}
 
-	return login{}, true
+	return User, true
 
 }
 
-func (d *DB) saveUser(user login) {
-	d.write("User", user.username, user)
+func (d *DB) saveUser(user *login) error {
+	return d.write("User", user.Username, user)
 }
 
 func (d *DB) write(bucket string, key string, value interface{}) error {

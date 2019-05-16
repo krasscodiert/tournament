@@ -1,6 +1,8 @@
 package tournamentserver
 
-import "github.com/krasscodiert/tournament/tournamentserver/IDFactories"
+import (
+	"github.com/krasscodiert/tournament/tournamentserver/idfactories"
+)
 
 // User - User struct
 type User struct {
@@ -11,7 +13,7 @@ type User struct {
 }
 
 // New - Default constructor
-func (u *User) New(name string, idFactory IDFactories.IDFactory) *User {
+func (u *User) New(name string, idFactory idfactories.IDFactory) *User {
 	p := new(User)
 	p.Name = name
 	p.ID = idFactory.GetID()

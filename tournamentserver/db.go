@@ -55,7 +55,7 @@ func (d *DB) getUser(name string) (login, bool) {
 
 }
 
-func (d *DB) saveUser(user *login) error {
+func (d *DB) saveUser(user *register) error {
 	return d.write("User", user.Username, user)
 }
 

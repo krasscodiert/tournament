@@ -7,6 +7,11 @@ import (
 )
 
 type login struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type register struct {
 	DisplayName string `json:"displayName"`
 	Username    string `json:"username"`
 	Password    string `json:"password"`
@@ -35,7 +40,6 @@ func (a *API) Start() {
 	a.router.POST("/addDeck", a.test)
 	a.router.GET("/User/:name", a.test)
 	a.router.GET("/joinTournament/:id", a.test)
-	defer a.db.Close()
 	a.router.Logger.Fatal(a.router.Start(":1337"))
 }
 
@@ -60,7 +64,8 @@ func (a *API) login(c echo.Context) error {
 }
 
 func (a *API) register(c echo.Context) error {
-	requestUser := new(login)
+	requestUser := new(register)
+
 	if err := c.Bind(requestUser); err != nil {
 		return err
 	}

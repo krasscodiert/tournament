@@ -1,11 +1,13 @@
-package IDFactories
+package idfactories
 
+// PartIDF - PartIDF  struct
 type PartIDF struct {
 	currentID int
 }
 
-func (p* PartIDF) GetID() int {
-	p.currentID += 1
+//GetID - returns ID
+func (p *PartIDF) GetID() int {
+	p.currentID++
 	current := p.currentID
 	return current
 }

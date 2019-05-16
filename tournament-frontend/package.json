@@ -12,7 +12,8 @@
     "babel-preset-es2015": "^6.24.1",
     "mithril": "^2.0.0-rc.4",
     "spectre.css": "^0.5.8",
-    "style.css": "^1.0.0"
+    "style.css": "^1.0.0",
+    "vis": "^4.21.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

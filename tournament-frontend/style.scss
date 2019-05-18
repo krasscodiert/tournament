@@ -84,16 +84,9 @@ html, body{
       }
     }
 
-    .wrapper {
-      overflow:auto;
-      display: flex;
-      flex-direction: column-reverse;
-
       .playerlist {
         height: calc(100% - 50px - 60px);
         overflow: auto;
-        display: flex;
-        flex-direction: column-reverse;
 
         .chip {
           margin-left: 4px;
@@ -115,10 +108,9 @@ html, body{
           border-color: $white;
           background-color: $darker;
         }
-        button:active{
+        button:active {
           background-color: $dark;
         }
-      }
     }
   }
 

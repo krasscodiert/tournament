@@ -8,9 +8,11 @@ export var CreateTournamentView = {
     players: [],
     addPlayer(){
         this.players.push(util.getRandomCSSColor());
+        this.updateScroll();
     },
     removePlayer(){
         this.players.pop();
+        this.updateScroll();
     },
     oninit(vnode){
         for(let i = 0; i < 5; i++){
@@ -18,17 +20,10 @@ export var CreateTournamentView = {
         }
     },
     oncreate(vnode){
-        $("#playerlist").on('scroll', function(){
-            this.scrolled=true;
-        });
-        //setInterval(updateScroll,1000);
     },
-    scrolled : false,
     updateScroll(){
-        if(!this.scrolled){
-            var element = document.getElementById("playerlist");
-            element.scrollTop = element.scrollHeight;
-        }
+        var element = document.getElementById("playerlist");
+        element.scrollTop = element.scrollHeight;
     },
     view(vnode) {
         let x = 0;
